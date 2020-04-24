@@ -1,0 +1,27 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native --exact
+
+PATH: 
+  C:\Program Files\IBM\IBM DATA SERVER DRIVER\bin;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Ruby26-x64\bin;C:\Users\NISHCHAY S K\Anaconda;C:\Users\NISHCHAY S K\Anaconda\Library\mingw-w64\bin;C:\Users\NISHCHAY S K\Anaconda\Library\usr\bin;C:\Users\NISHCHAY S K\Anaconda\Library\bin;C:\Users\NISHCHAY S K\Anaconda\Scripts;C:\Program Files\IBM\IBM DATA SERVER DRIVER\bin;C:\Users\NISHCHAY S K\AppData\Roaming\npm;C:\Users\NISHCHAY S K\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
+
+npm manifest: 
+  {"name":"project1","version":"0.0.1","private":true,"scripts":{"start":"node node_modules/react-native/local-cli/cli.js start"}}
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
