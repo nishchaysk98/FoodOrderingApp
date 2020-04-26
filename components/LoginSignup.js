@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     padding:"5px"
   },
   defaultLook: {
-    fontWeight:"none",
     padding:"5px"
   }
 })
@@ -28,22 +27,21 @@ class LoginSignup extends React.Component{
     render(){
       return(
         <NativeRouter>
-          <View style={{flex:"1", flexDirection:"row", width:"50%", margin:"auto", padding:"10px",borderBottom:"2px solid #3298E0", marginTop:"10%"}}>
-            <View style={{flex:"1", textAlign:"center"}}>
-              <Link  to="/" underlayColor="#f0f4f7" onClick={()=>{ this.setState({first:true, second:false})}}>
+          <View >
+            <View>
+              {/*<Link  to="/login" underlayColor="#f0f4f7" onClick={()=>{ this.setState({first:true, second:false})}}>
                 {this.state.first? <Text style={styles.changeLook}>Login</Text> : <Text style={styles.defaultLook}>Login</Text>}
               </Link>
             </View>
-            <View  style={{flex:"1", textAlign:"center"}}>
+            <View >
               <Link to="/signup" underlayColor="#f0f4f7" onClick={()=>{ this.setState({first:false, second:true})}}>
                 {this.state.second? <Text style={styles.changeLook}>Signup</Text> : <Text style={styles.defaultLook}>Signup</Text>}
-              </Link>
+              </Link>*/}
             </View>
           </View>
 
-
-          <Route exact path="/" component={Login} />
-          <Route path="/signup" component={Signup} />
+          {/*<Route exact path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />*/}
 
         </NativeRouter>    
       )

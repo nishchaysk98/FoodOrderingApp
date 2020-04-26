@@ -10,6 +10,10 @@ class AddItemComponent extends React.Component{
 
   constructor(props){
     super(props);
+    this.url = this.props.location.state.url
+    this.userid = this.props.location.state.userid
+    this.rid = this.props.location.state.rid
+    
     this.state = {
       itemdetails : this.props.location.state.itemdetails,
       checkboxvalues : [],
@@ -37,6 +41,7 @@ class AddItemComponent extends React.Component{
 
     const objToSend = {"foodid":id, "addOnQId":[], "foodQuantity":this.state.quantity}
     store.dispatch(AddItem(objToSend, this.state.price));
+    alert("Item Added to Cart")
   }
 
   backClicked = () => {
@@ -50,25 +55,21 @@ class AddItemComponent extends React.Component{
     }
 
     return (   
-      <View style={{alignItems:'center'}}>
-      
-      <View style={{height:50, alignItems:"center"}}><Text style={{marginTop:20, fontWeight:"bold"}}>Food Ordering App</Text></View>
-          <View style={{marginTop:40, marginLeft:20}}>
-          
-            <Text style={{width:'90%', fontWeight:"bold", fontSize:18}}>{this.state.itemdetails.name}</Text>
-            <Text style={{width:'90%', fontSize:14, marginTop:10}}>{this.state.itemdetails.description}</Text>
-            <Text style={{width:'90%', fontSize:14, marginTop:10}}>Price: {this.state.itemdetails.price} /- </Text>
-            <Text style={{marginTop:30}}>Pick one item from below</Text>
+      <View>
+          <View style={{padding:20,margin:20,alignItems:"center", backgroundColor:"lightgrey"}}>
+            <Text style={{width:'100%', fontWeight:"bold", fontSize:18}}>{this.state.itemdetails.name}</Text>
+            <Text style={{width:'100%', fontSize:14, marginTop:10}}>{this.state.itemdetails.description}</Text>
+            <Text style={{width:'100%', fontSize:14, marginTop:10}}>Price: {this.state.itemdetails.price} /- </Text>
+            
           {
             // this.state.itemdetails.addOnQsnsDetails.length != 0 ? 
             // <View style={{marginTop:20}}>
             //   <RadioComponent extraarr={this.state.itemdetails.addOnQsnsDetails}/>
             // </View> : <View></View>
           }
-          
-            </View>
-            
-            <View style={{flex:1, flexDirection:"row", marginTop:20}}>
+        </View>
+            <View style={{alignItems:"center"}}>
+            <View style={{flexDirection:"row", marginTop:20}}>
               <Button title="-" onPress={
                 () => {
                   if(this.state.quantity >= 2){
@@ -98,11 +99,19 @@ class AddItemComponent extends React.Component{
             />
             </View> 
 
-            <Link to="/">
-              <View style={{height:50, marginTop:40, width:'100%'}}>
-                    <Text style={{fontWeight:"bold"}}>Back</Text>
+            <Link to={{
+              pathname:"/foodlist",
+              state:{
+                url : this.url,
+                userid: this.userid,
+                rid: this.rid
+              }
+              }} style={{marginTop:20}}>
+              <View>
+                    <Text style={{fontWeight:"bold", backgroundColor:"lightgrey", padding:10}}>Back</Text>
               </View>
             </Link>
+          </View>  
       </View>
     )
   }
